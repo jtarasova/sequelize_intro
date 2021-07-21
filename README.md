@@ -26,17 +26,17 @@
                      foreignKey: 'author',
                  });
                  }
-                 ```
+      ```
         - в модели `User`:
-            ```
+      ```JavaScript
             static associate(models) {
             this.hasMany(models.Post, {
             foreignKey: 'author',
             });
             }
-            ```
+         ```
         - в миграции `create-post`:
-            ```
+      ```JavaScript
             author: {
             type: Sequelize.INTEGER,
             allowNull: false,
@@ -47,4 +47,4 @@
             key: 'id',
             },
             }
-            ```
+      ```
