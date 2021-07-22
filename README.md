@@ -66,11 +66,11 @@
     
    2. Изменить миграцию с использованием
     
-    ```JavaScript queryInterface.addColumn ```
+   ```JavaScript queryInterface.addColumn ```
 
       и
 
-    ```queryInterface.removeColumn ``` 
+   ```queryInterface.removeColumn ``` 
    3. Добавить новое поле в модель `User` 
    4. Запустить миграцию 
    
