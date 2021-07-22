@@ -64,10 +64,14 @@
     
     `npx sequelize-cli migration:create --name new_column_in_user` 
     
-   1. Изменить миграцию с использованием
+   2. Изменить миграцию с использованием
     
       `JavaScript queryInterface.addColumn `
 
       и
 
-     `queryInterface.removeColumn ` 1. Добавить новое поле в модель `User` 1. Запустить миграцию `npx sequelize-cli db:migrate`
+     `queryInterface.removeColumn ` 
+   3. Добавить новое поле в модель `User` 
+   4. Запустить миграцию 
+   
+   ```npx sequelize-cli db:migrate```
