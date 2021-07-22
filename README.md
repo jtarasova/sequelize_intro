@@ -48,3 +48,10 @@
             },
             }
             ```
+
+## Миграции
+
+Чтобы добвить новое поле в таблицу, нужно: 1. Создать миграцию командой `npx sequelize-cli migration:create --name new_column_in_user` 1. Изменить миграцию с использованием
+`JavaScript queryInterface.addColumn `
+и
+` queryInterface.removeColumn ` 1. Добавить новое поле в модель `User` 1. Запустить миграцию `npx sequelize-cli db:migrate`

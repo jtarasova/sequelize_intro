@@ -25,6 +25,10 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         unique: true,
       },
+      age: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
     },
     {
       sequelize,
@@ -33,4 +37,3 @@ module.exports = (sequelize, DataTypes) => {
   );
   return User;
 };
-
