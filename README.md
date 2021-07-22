@@ -68,7 +68,7 @@
     
    ```JavaScript queryInterface.addColumn ```
 
-      и
+  и
 
    ```queryInterface.removeColumn ``` 
    
