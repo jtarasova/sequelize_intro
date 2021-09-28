@@ -126,36 +126,39 @@
 
 ### Модели
 
-    1. В модели Dogs нужно описать связь с многими котами через промежуточную таблицу:
+1. В модели Dogs нужно описать связь с многими котами через промежуточную таблицу:
 
-    ```Javascript
-    this.belongsToMany(Cat, { through: 'Dogscats', foreignKey: 'dog_id' });
-    ```
-     1. В модели Cats нужно сделать аналогичную связь:
+   ```Javascript
+   this.belongsToMany(Cat, { through: 'Dogscats', foreignKey: 'dog_id' });
+   ```
 
-    ```Javascript
-      this.belongsToMany(Dog, { through: 'Dogscats', foreignKey: 'cat_id' });
-    ```
-    1. В модели Dogscats _ничего делать не нужно_
+1. В модели Cats нужно сделать аналогичную связь:
+
+   ```Javascript
+     this.belongsToMany(Dog, { through: 'Dogscats', foreignKey: 'cat_id' });
+   ```
+
+1. В модели Dogscats _ничего делать не нужно_
 
 ### Миграции
 
-    1. В миграции `dogscats` указываем, что столбцы `cat_id` и `dog_id` ссылаются на таблицы `Cats` и `Dog` соответсвенно
+1. В миграции `dogscats` указываем, что столбцы `cat_id` и `dog_id` ссылаются на таблицы `Cats` и `Dog` соответсвенно
 
-    ```Javascript
-         dog_id: {
+   ```Javascript
+        dog_id: {
+       type: Sequelize.INTEGER,
+       references: {
+         model: 'Dogs', // tableName
+         key: 'id',
+       },
+        },
+        cat_id: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'Dogs', // tableName
-          key: 'id',
-        },
-         },
-         cat_id: {
-         type: Sequelize.INTEGER,
-         references: {
-          model: 'Cats', // tableName
-          key: 'id',
-        },
-        },
-    ```
-    1. В миграциях `Cats` и `Dogs` ничего делать не нужно
+         model: 'Cats', // tableName
+         key: 'id',
+       },
+       },
+   ```
+
+1. В миграциях `Cats` и `Dogs` ничего делать не нужно
