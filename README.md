@@ -7,7 +7,7 @@
 1.  `npm i -D sequelize-cli` - устанавливаем sequelize cli
 1.  создаём файл `.sequelizerc`:
 
-````Javascript
+```Javascript
  const path = require('path');
  module.exports = {
  'config': path.resolve('config', 'config.json'),
@@ -15,14 +15,16 @@
  'seeders-path': path.resolve('db', 'seeders'),
  'migrations-path': path.resolve('db', 'migrations')
  };
- ```
+```
+
 1. `npx sequelize-cli init` - создаём структуру для работы с sequelize
 1. В файле `config.json` изменили данные для БД (username, password, database, dialect) на свои. Обратите внимание, что мы ввели разные данные для development и test
 1. Для того, чтобы sequelize следил за сидерами (не накатывались те сидеры, которые уже были добавлены в БД, аналогично миграциям),в файл `config.json` добавили строчки
-````
 
+````
     "seederStorage": "sequelize",
     "seederStorageTableName": "SequelizeData"
+
     ```
 
 ## Что сделали
@@ -50,20 +52,21 @@
     ```JavaScript
          static associate(models) {
              this.belongsTo(models.User, {
-                 foreignKey: 'author',
+                foreignKey: 'author',
              });
              }
     ```
     - в модели `User`:
     ```JavaScript
-          static associate(models) {
-          this.hasMany(models.Post, {
-          foreignKey: 'author',
+         static associate(models) {
+            this.hasMany(models.Post, {
+            foreignKey: 'author',
           });
           }
     ```
     - в миграции `create-post`:
-    ````JavaScript
+
+    ```JavaScript
           author: {
           type: Sequelize.INTEGER,
           allowNull: false,
@@ -74,8 +77,7 @@
           key: 'id',
           },
           }
-          ```
-    ````
+    ```
 
 ## Миграции
 
@@ -97,7 +99,7 @@
 
 `npx sequelize-cli migration:create --name new_column_in_user`
 
-2.  Изменить миграцию с использованием
+1.  Изменить миграцию с использованием
 
 `JavaScript queryInterface.addColumn `
 
@@ -105,8 +107,8 @@
 
 `queryInterface.removeColumn `
 
-3.  Добавить новое поле в модель `User`
-4.  Запустить миграцию
+1.  Добавить новое поле в модель `User`
+1.  Запустить миграцию
 
 `npx sequelize-cli db:migrate`
 
@@ -119,7 +121,6 @@
 Есть три таблицы: Dogs, Cats и DogsCats. Многие собаки могут дружить с многими кошками. Связь между кошками и собаками описывается в таблице `Dogscats`.
 
 ### Модели
-
     1. В модели Dogs нужно описать связь с многими котами через промежуточную таблицу:
 
     ```Javascript
@@ -153,3 +154,4 @@
         },
     ```
     1. В миграциях `Cats` и `Dogs` ничего делать не нужно
+````
