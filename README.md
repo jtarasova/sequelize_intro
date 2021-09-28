@@ -37,6 +37,8 @@
 
 1.  Когда пишем seeder, поля `createdAt` и `updatedAt` нужно заполнить
 
+1.  Когда пишем seeder, поля `createdAt` и `updatedAt` нужно заполнить самому `new Date()`
+
 ### Связи
 
 **_Важно_**
@@ -77,7 +79,7 @@
 
 ## Миграции
 
-Чтобы добвить новое поле в таблицу, нужно: 
+Чтобы добвить новое поле в таблицу, нужно:
 
 1. Создать миграцию командой `npx sequelize-cli migration:create --name new_column_in_user`
 
@@ -91,6 +93,22 @@
 
 1. Добавить новое поле в модель `User`
 1. Запустить миграцию `npx sequelize-cli db:migrate`
+1. Создать миграцию командой
+
+`npx sequelize-cli migration:create --name new_column_in_user`
+
+2.  Изменить миграцию с использованием
+
+`JavaScript queryInterface.addColumn `
+
+и
+
+`queryInterface.removeColumn `
+
+3.  Добавить новое поле в модель `User`
+4.  Запустить миграцию
+
+`npx sequelize-cli db:migrate`
 
 ## Many to many
 
