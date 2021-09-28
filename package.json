@@ -7,7 +7,7 @@
     "start": "node app.js",
     "up": "npx sequelize-cli db:migrate",
     "down": "sequelize-cli db:migrate:undo",
-    "many": "NODE_ENV=test node app.js"
+    "many": "NODE_ENV=test node appMany.js"
   },
   "keywords": [],
   "author": "",
