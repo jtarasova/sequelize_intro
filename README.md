@@ -5,7 +5,24 @@
    1.  `npm init -y` - инициализируем проект node
    1. `npm i sequelize` и `npm i pg pg-hstore` - устанавливаем зависимости postgres
    1. `npm i -D sequelize-cli` - устанавливаем sequelize cli
+   1. создаём файл `.sequelizerc`:
+   ```Javascript
+    const path = require('path');
+    module.exports = {
+    'config': path.resolve('config', 'config.json'),
+    'models-path': path.resolve('db', 'models'),
+    'seeders-path': path.resolve('db', 'seeders'),
+    'migrations-path': path.resolve('db', 'migrations')
+    };
+    ```
    1. `npx sequelize-cli init` - создаём структуру для работы с sequelize
+   1. В файле `config.json` изменили данные для БД (username, password, database, dialect) на свои
+   1. Для того, чтобы sequelize следил за сидерами (не накатывались те сидеры, которые уже были добавлены в БД, аналогично миграциям),в файл `config.json` добавили строчки
+   ```
+    "seederStorage": "sequelize",
+    "seederStorageTableName": "SequelizeData"
+    ```
+
 
 ## Что сделали
 

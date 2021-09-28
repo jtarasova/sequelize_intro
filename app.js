@@ -9,7 +9,7 @@ const {
 const main = async () => {
   await sequelize.authenticate();
   console.log('Connection has been established successfully.');
-  //   const usr = await User.create({ name: 'Igoro', email: 'in@mailo.ru' });
+    const usr = await User.create({ name: 'Igoro', email: 'in@mailo.ru' });
   //   console.log(usr.dataValues);
   //   const allUsers = await User.findAll({
   //     where: { name: 'George Bla' },

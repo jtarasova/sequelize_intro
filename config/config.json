@@ -4,12 +4,14 @@
     "password": "123",
     "database": "elbrus",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "seederStorage": "sequelize",
+    "seederStorageTableName": "SequelizeData"
   },
   "test": {
-    "username": "elbrus_user",
+    "username": "jora",
     "password": "123",
-    "database": "elbrus",
+    "database": "party",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },

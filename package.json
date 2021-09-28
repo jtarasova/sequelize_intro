@@ -7,7 +7,7 @@
     "start": "node app.js",
     "up": "npx sequelize-cli db:migrate",
     "down": "sequelize-cli db:migrate:undo",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "many": "NODE_ENV=test node app.js"
   },
   "keywords": [],
   "author": "",
