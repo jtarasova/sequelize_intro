@@ -3,7 +3,7 @@
 ## Как начинали работу
 
 1.  `npm init -y` - инициализируем проект node
-1.  `npm i sequelize` и `npm i pg pg-hstore` - устанавливаем зависимости postgres
+1.  `npm i sequelize pg pg-hstore` - устанавливаем зависимости postgres
 1.  `npm i -D sequelize-cli` - устанавливаем sequelize cli
 1.  создаём файл `.sequelizerc`:
 
@@ -31,7 +31,7 @@
 1.  Создали модель командой `npx sequelize-cli model:generate --name User --attributes firstName:string,lastName:string,email:string` (изменили под себя)
     - Одновременно с этим создалась миграция
     - **Если поменяли что-то в модели - меняем и в миграции**
-1.  Накатили миграцию
+1.  Накатили миграцию `npx sequelize-cli db:migrate`
 1.  Создали seeder командой `npx sequelize-cli seed:generate --name demo-user` (изменили под себя)
 
 ## На что обратить внимание
