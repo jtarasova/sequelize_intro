@@ -36,8 +36,6 @@
 
 ## На что обратить внимание
 
-1.  Когда пишем seeder, поля `createdAt` и `updatedAt` нужно заполнить
-
 1.  Когда пишем seeder, поля `createdAt` и `updatedAt` нужно заполнить самому `new Date()`
 
 ### Связи
@@ -102,22 +100,7 @@ _Таблица 1_. Связь One-to-Many.
 
 1. Добавить новое поле в модель `User`
 1. Запустить миграцию `npx sequelize-cli db:migrate`
-1. Создать миграцию командой
 
-`npx sequelize-cli migration:create --name new_column_in_user`
-
-1.  Изменить миграцию с использованием
-
-`JavaScript queryInterface.addColumn `
-
-и
-
-`queryInterface.removeColumn `
-
-1.  Добавить новое поле в модель `User`
-1.  Запустить миграцию
-
-`npx sequelize-cli db:migrate`
 
 ## Many to many
 
